@@ -60,7 +60,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <Content Include="AmazonItemExample.xml" />
-    <None Include="rootkey.json" />
+    <None Include="rootkey.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">

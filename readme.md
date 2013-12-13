@@ -1,8 +1,8 @@
-### Santa API
+# Santa API
 
 ## Usage:
 
-# Post santa your list
+### Post santa your list
 Example:
 
 POST /Simon/ 
@@ -14,7 +14,7 @@ Body:
 }
 ```
 
-# Show your list to people
+### Show your list to people
 Example:
 
 GET /Simon/
@@ -24,6 +24,6 @@ Response:
 
 ```
 
-# Get amazon links for your list
+### Get amazon links for your list
 
 GET /Simon/amazon
