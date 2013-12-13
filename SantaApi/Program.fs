@@ -9,7 +9,6 @@ open System.Security.Cryptography
 open System.Web
 open Microsoft.FSharp.Linq
 open Microsoft.FSharp.Data.TypeProviders
-open Microsoft.WindowsAzure
 
 open FSharp.Data
 open ImpromptuInterface.FSharp
