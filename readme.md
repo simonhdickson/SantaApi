@@ -3,6 +3,8 @@
 ## Usage:
 
 ### Post santa your list
+My ridiculously over engineered "api to santa", which is actually more like a list api. Made for the pebble{code} hack day, unfortunately I got distracted by the amazon api and didn't get a chance to fully feldge it.
+
 Example:
 
 POST /Simon/ 
