@@ -9,6 +9,7 @@ open System.Security.Cryptography
 open System.Web
 open Microsoft.FSharp.Linq
 open Microsoft.FSharp.Data.TypeProviders
+open Microsoft.WindowsAzure
 
 open FSharp.Data
 open ImpromptuInterface.FSharp
@@ -59,7 +60,12 @@ type ListRequest() =
     member val list:string array = [||] with get, set
     
 type amazonAccountParser = JsonProvider<"rootkey.json">
+
+#if DEBUG
 let amazonConfig = amazonAccountParser.Load("rootkey.json")
+#else
+let amazonConfig = amazonAccountParser.Parse(CloudConfigurationManager.GetSetting("Amazon"))
+#endif
 
 type ItemResponse = XmlProvider<"AmazonItemExample.xml">
 
@@ -121,7 +127,11 @@ type SantaApi() as self =
 
 [<EntryPoint>]
 let main argv =
+    #if DEBUG
     let nancyHost = new NancyHost(Uri "http://localhost:8888/nancy/")
+    #else
+    let nancyHost = new NancyHost(Uri "http://localhost:80/")
+    #endif
     nancyHost.Start()
     Console.ReadKey() |> ignore
     0
